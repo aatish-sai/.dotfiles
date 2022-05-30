@@ -1,0 +1,5 @@
+# user nvim as the default editor
+VIM="nvim"
+
+export GIT_EDITOR=$VIM
+export VISUAL=$VIM
