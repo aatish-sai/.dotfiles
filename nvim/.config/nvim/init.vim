@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 " color scheme
+Plug 'gruvbox-community/gruvbox'
 
 " cmp plugins
 Plug 'hrsh7th/nvim-cmp'
@@ -40,3 +41,6 @@ let mapleader = " "
 
 " reload vim files
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+colorscheme gruvbox
+highlight Normal guibg=None
