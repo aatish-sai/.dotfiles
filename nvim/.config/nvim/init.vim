@@ -22,6 +22,9 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" Telescope extension
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' } 
+
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -29,6 +32,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " web icon
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'onsails/lspkind-nvim'
 
 " nvim tree
 Plug 'kyazdani42/nvim-tree.lua'

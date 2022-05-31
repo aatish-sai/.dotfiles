@@ -1,1 +1,5 @@
 require("aatish.nvim-tree")
+require("aatish.cmp")
+require("aatish.comment")
+require("aatish.telescope")
+require("aatish.treesitter")

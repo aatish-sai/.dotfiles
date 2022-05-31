@@ -1,7 +1,3 @@
-" nvim-tree
-nnoremap <leader>e :NvimTreeToggle<CR>
-
-
 " use ctrl c as escape
 inoremap <C-c> <esc>
 
