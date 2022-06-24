@@ -7,12 +7,19 @@ local actions = require "telescope.actions"
 
 telescope.setup {
     defaults = {
+        file_sorter = require("telescope.sorters").get_fzf_sorter,
+
+        file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+        grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+        qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "smart" },
         mappings ={
             i ={
                 ['<C-x>'] = false,
+                ['<C-q>'] = actions.send_to_qflist,
             },
         },
     },

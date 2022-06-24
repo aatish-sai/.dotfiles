@@ -9,7 +9,7 @@ if not snip_status_ok then
 end
 
 local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-if not lspkind_status_ok then 
+if not lspkind_status_ok then
     return
 end
 
@@ -25,7 +25,7 @@ cmp.setup({
     snippet = {
         expand = function(args)
             -- For luasnip user
-            require("luasnip").lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     window ={

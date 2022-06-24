@@ -1,6 +1,41 @@
 -- Mappings
 local opts = { noremap=true, silent=true}
 
+vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+
+local signs = {
+    { name = 'DiagnosticSignError', text = '' },
+    { name = 'DiagnosticSignWarn', text = '' },
+    { name = 'DiagnosticSignHint', text = '' },
+    { name = 'DiagnosticSignInfo', text = '' },
+}
+
+for _, sign in ipairs(signs) do
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
+end
+
+local config = {
+    -- disable virtual text
+    virtual_text = false,
+
+    signs = {
+        active = signs
+    },
+    update_in_insert = true,
+    underline = true,
+    severity_sort = true,
+    float = {
+        focusable = false,
+        style = 'minimal',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
+}
+
+vim.diagnostic.config(config)
+
 -- easy lsp installer
 local status_ok, lsp_installer = pcall(require, 'nvim-lsp-installer')
 if not status_ok then
@@ -36,6 +71,8 @@ local function config(_config)
     }, _config or {})
 end
 
+lspconfig.tsserver.setup(config())
+
 lspconfig.sumneko_lua.setup(config({
     settings ={
         Lua = {
@@ -58,3 +95,14 @@ lspconfig.sumneko_lua.setup(config({
 lspconfig.pyright.setup(config())
 
 lspconfig.jsonls.setup(config())
+
+lspconfig.cssls.setup(config())
+
+lspconfig.tailwindcss.setup(config())
+
+lspconfig.eslint.setup(config())
+
+lspconfig.emmet_ls.setup(config({
+    filetypes = {'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss','less'},
+}))
+
