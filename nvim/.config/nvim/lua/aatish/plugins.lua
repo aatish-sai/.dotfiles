@@ -50,7 +50,7 @@ return packer.startup(function (use)
 
   --Buffer Line
   use "famiu/bufdelete.nvim"
-  use "akinsho/bufferline.nvim"
+  use {"akinsho/bufferline.nvim", tag = "v2.3.0", requires = "kyazdani42/nvim-web-devicons"}
 
   -- Lualine
   use "nvim-lualine/lualine.nvim"
