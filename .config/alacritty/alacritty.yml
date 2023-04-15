@@ -1,0 +1,30 @@
+env:
+  TERM: xterm-256color
+
+font:
+  size: 18
+  offset:
+    y: 8
+  glyph_offset:
+    y: 5
+  normal:
+    family: JetBrainsMono Nerd Font
+window:
+  padding:
+    x: 5
+    y: 5
+  opacity: 0.98
+  decorations: buttonless
+
+scrolling:
+  history: 2000
+  auto_scroll: true
+
+visual_bell:
+  duration: 0
+
+shell:
+  program: /bin/zsh
+  args:
+    - --login
+live_config_reload: true
